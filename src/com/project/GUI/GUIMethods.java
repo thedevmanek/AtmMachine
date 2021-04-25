@@ -7,13 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class LoginPage {
-
-    public static void main(String[] args) {
-        Login();
-    }
-
-    private static void Login() {
+public class GUIMethods {
+    public  void Login() {
         //Creating the Frame
         int HEIGHT = 1080;
         int WIDTH = 1080;
@@ -115,7 +110,7 @@ public class LoginPage {
         frame.setVisible(true);
     }
 
-    private static void AccountValue(Long Cardno) {
+    private  void AccountValue(Long Cardno) {
         //Creating the Frame
         int HEIGHT = 1080;
         int WIDTH = 1080;
