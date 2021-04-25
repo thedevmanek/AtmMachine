@@ -3,11 +3,11 @@ package com.project.Database;
 import java.sql.*;
 
 public class BankDatabase {
+    String jdbcUrl = "jdbc:mysql://127.0.0.1:3306/user_schema";
+    String username = "root";
+    String password = "password";
 
     public boolean LogIn(Long no, int pin) {
-        String jdbcUrl = "jdbc:mysql://127.0.0.1:3306/user_schema";
-        String username = "root";
-        String password = "password";
 
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
@@ -28,12 +28,9 @@ public class BankDatabase {
     }
 
     public boolean SignUp(Long no, int pin) {
-        String jdbcUrl = "jdbc:mysql://127.0.0.1:3306/user_schema";
-        String username = "root";
-        String password = "password";
-
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+            //noinspection SqlInsertValues
             String sql2 = "INSERT INTO user_table(Cardno,pin)" + " VALUES (?,?)";
             PreparedStatement statement2 = connection.prepareStatement(sql2);
             statement2.setString(1, String.valueOf(no));
@@ -46,9 +43,7 @@ public class BankDatabase {
         }
     }
     public long getMoney(Long no) {
-        String jdbcUrl = "jdbc:mysql://127.0.0.1:3306/user_schema";
-        String username = "root";
-        String password = "password";
+
 
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
