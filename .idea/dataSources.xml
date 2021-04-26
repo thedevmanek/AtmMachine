@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="127.0.0.1" uuid="65f2ce61-c3fc-4b0f-a76b-149a7490cf04">
+    <data-source source="LOCAL" name="Database" uuid="fceb9132-87eb-4af4-8847-bab1d3c826c9">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>127.0.0.1</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/user_schema</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="BankDatabase" uuid="5554dba0-a86b-46d7-acf7-9275c9304396">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1:3306/user_schema</jdbc-url>
+      <jdbc-url>jdbc:mysql://remotemysql.com:3306/rx2FbzJfCD</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

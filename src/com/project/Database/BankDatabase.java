@@ -3,15 +3,15 @@ package com.project.Database;
 import java.sql.*;
 
 public class BankDatabase {
-    String jdbcUrl = "jdbc:mysql://127.0.0.1:3306/user_schema";
-    String username = "root";
-    String password = "password";
+    String jdbcUrl = "jdbc:mysql://remotemysql.com:3306/rx2FbzJfCD";
+    String username = "rx2FbzJfCD";
+    String password = "3C7WnWisbw";
 
     public boolean LogIn(Long no, int pin) {
 
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
-            String sql = "SELECT * FROM user_table WHERE Cardno =?";
+            String sql = "SELECT * FROM bank_database WHERE Cardno =?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, String.valueOf(no));
             ResultSet rs = statement.executeQuery();
@@ -31,7 +31,7 @@ public class BankDatabase {
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
             //noinspection SqlInsertValues
-            String sql2 = "INSERT INTO user_table(Cardno,pin)" + " VALUES (?,?)";
+            String sql2 = "INSERT INTO bank_database(Cardno,pin)" + " VALUES (?,?)";
             PreparedStatement statement2 = connection.prepareStatement(sql2);
             statement2.setString(1, String.valueOf(no));
             statement2.setString(2, String.valueOf(pin));
@@ -47,7 +47,7 @@ public class BankDatabase {
 
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
-            String sql = "SELECT * FROM user_table WHERE Cardno =?";
+            String sql = "SELECT * FROM bank_database WHERE Cardno =?";
             PreparedStatement statement = connection.prepareStatement(sql);
             statement.setString(1, String.valueOf(no));
             ResultSet rs = statement.executeQuery();
@@ -63,13 +63,10 @@ public class BankDatabase {
         }
     }
     public boolean Withdraw(Long no,Long money1) {
-        String jdbcUrl = "jdbc:mysql://127.0.0.1:3306/user_schema";
-        String username = "root";
-        String password = "password";
 
         try {
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
-            String sql = "UPDATE user_table SET money=money +"+money1+" WHERE Cardno="+no;
+            String sql = "UPDATE bank_database SET money=money +"+money1+" WHERE Cardno="+no;
             Statement statement = connection.createStatement();
             int rows =  statement.executeUpdate(sql);
             return rows > 0;
